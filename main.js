@@ -9,7 +9,7 @@ camera.position.set(0, 1.5, 5);
 
 const renderer = new THREE.WebGLRenderer({antialias: true});
 renderer.setSize( window.innerWidth, window.innerHeight );
-document.body.appendChild( renderer.domElement );
+document.getElementById('3dcontainer').appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -29,7 +29,7 @@ loader.load(
     scene.add(model);
 
     model.position.set(0, 0, 0);
-    model.scale.set(1, 1, 1);
+    model.scale.set(10, 10, 10);
 
     if (gltf.animations && gltf.animations.length) {
       mixer = new THREE.AnimationMixer(model);
